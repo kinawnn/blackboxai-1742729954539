@@ -1,34 +1,94 @@
+# LuckyDropper Messages Configuration
+
+prefix: "&8[&bLuckyDropper&8] "
+
+# General Messages
 general:
   no_permission: "&cYou don't have permission to do that!"
-  usage: "&eUsage: /luckydropper <command> [args]"
-join:
-  success: "&aYou have joined map {map_name}!"
-  error: "&cUnable to join the map."
+  player_only: "&cThis command can only be used by players!"
+  invalid_args: "&cInvalid arguments! Usage: {usage}"
+  reload_success: "&aConfiguration reloaded successfully!"
+  reload_failed: "&cFailed to reload configuration!"
+
+# Game Messages
+game:
+  join:
+    success: "&aYou joined the game!"
+    already_in_game: "&cYou are already in a game!"
+    game_full: "&cThis game is full!"
+    game_in_progress: "&cThis game is already in progress!"
+  leave:
+    success: "&aYou left the game!"
+    not_in_game: "&cYou are not in a game!"
+  start:
+    countdown: "&aGame starting in &e{time} &aseconds!"
+    started: "&aThe game has started! Good luck!"
+    cancelled: "&cGame start cancelled - not enough players!"
+  end:
+    victory: "&a&lCongratulations! &r&aYou won the game!"
+    game_over: "&cGame Over! Thanks for playing!"
+    stats: "&7Your final position: &e#{position}"
+  checkpoint:
+    set: "&aCheckpoint set!"
+    teleport: "&aTeleported to last checkpoint!"
+    none: "&cYou don't have a checkpoint set!"
+  death:
+    message: "&cYou died! Deaths: &e{deaths}"
+    respawn: "&aRespawning at last checkpoint..."
+
+# Voting Messages
 vote:
-  start: "&bVoting has started! Use /ld vote to cast your vote!"
-  result: "&aMap {map_name} wins the vote!"
-setting:
-  updated: "&2Settings have been updated successfully!"
-  invalid: "&cInvalid setting parameters!"
-door:
-  triggered: "&eDoor activated!"
-dropper:
-  activated: "&dDropper triggered!"
-scoreboard:
-  updated: "&aScoreboard updated!"
-portal:
-  entered: "&5You have entered a portal!"
-  teleported: "&dTeleporting..."
-command:
-  help_admin:
-    - "&c/luckydropper join - Join the currently active map (for players)"
-    - "&c/luckydropper joinid <mapName> - Join a specified map"
-    - "&c/luckydropper vote - Open voting UI for map selection"
-    - "&c/luckydropper setting <option> <value> - Change admin settings"
-    - "&c/luckydropper reload - Reload plugin configuration"
-  help_player:
-    - "&a/luckydropper join - Join the currently active map"
-    - "&a/luckydropper joinid <mapName> - Join a specified map"
-    - "&a/luckydropper vote - Vote for your desired map"
+  start: "&aMap voting has started! Use &e/vote &ato cast your vote!"
+  end: "&aVoting has ended! The winning map is: &e{map}"
+  success: "&aYou voted for &e{map}&a!"
+  already_voted: "&cYou have already voted for &e{map}&c!"
+  not_active: "&cVoting is not currently active!"
+  insufficient_players: "&cNot enough players to start voting!"
+
+# Map Messages
+map:
+  not_found: "&cMap not found: &e{map}"
+  already_exists: "&cMap already exists: &e{map}"
+  created: "&aMap created: &e{map}"
+  deleted: "&aMap deleted: &e{map}"
+  set_spawn: "&aSpawn point set for map: &e{map}"
+  loading: "&aLoading map: &e{map}"
+  loaded: "&aMap loaded successfully!"
+  load_failed: "&cFailed to load map: &e{map}"
+
+# Admin Messages
+admin:
+  create:
+    success: "&aSuccessfully created map: &e{map}"
+    failed: "&cFailed to create map: &e{map}"
+  delete:
+    success: "&aSuccessfully deleted map: &e{map}"
+    failed: "&cFailed to delete map: &e{map}"
+  setspawn:
+    success: "&aSpawn point set for map: &e{map}"
+    failed: "&cFailed to set spawn point for map: &e{map}"
+  reload:
+    start: "&aReloading plugin configuration..."
+    success: "&aPlugin configuration reloaded successfully!"
+    failed: "&cFailed to reload plugin configuration!"
+
+# Error Messages
 error:
-  generic: "&cAn error occurred. Please check the console for details."
+  command_error: "&cAn error occurred while executing the command!"
+  invalid_map: "&cInvalid map name: &e{map}"
+  invalid_player: "&cPlayer not found: &e{player}"
+  invalid_location: "&cInvalid location!"
+  world_not_found: "&cWorld not found: &e{world}"
+  schematic_not_found: "&cSchematic not found: &e{schematic}"
+  database_error: "&cA database error occurred!"
+
+# Stats Messages
+stats:
+  header: "&7=== &bYour Stats &7==="
+  games_played: "&7Games Played: &e{games}"
+  wins: "&7Wins: &e{wins}"
+  losses: "&7Losses: &e{losses}"
+  win_rate: "&7Win Rate: &e{rate}%"
+  best_time: "&7Best Time: &e{time}"
+  total_deaths: "&7Total Deaths: &e{deaths}"
+  footer: "&7=================="
