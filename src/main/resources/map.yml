@@ -1,11 +1,113 @@
+# LuckyDropper Map Configuration
+
+# Map Settings
+settings:
+  default_map: "default"
+  max_maps_per_arena: 5
+  schematic_world: "world"
+
+# Maps Configuration
 maps:
-  LuckyArena1:
+  default:
+    enabled: true
+    display_name: "&bDefault Map"
+    description:
+      - "&7The default dropper map"
+      - "&7Difficulty: &aEasy"
+    schematic: "default_map"
     world: "world"
-    pos1: [50, 64, 50]
-    pos2: [150, 80, 150]
+    difficulty: "EASY"
+    min_y: 0
+    max_y: 256
+    spawn_point:
+      x: 0
+      y: 150
+      z: 0
+      yaw: 0
+      pitch: 0
+    checkpoint_locations:
+      - x: 0
+        y: 100
+        z: 0
+      - x: 0
+        y: 50
+        z: 0
+    finish_location:
+      x: 0
+      y: 5
+      z: 0
+    pos1:
+      - 0
+      - 0
+      - 0
+    pos2:
+      - 16
+      - 256
+      - 16
+
+  advanced:
     enabled: true
-  LuckyArena2:
-    world: "world_nether"
-    pos1: [30, 50, 30]
-    pos2: [130, 70, 130]
-    enabled: true
+    display_name: "&cAdvanced Map"
+    description:
+      - "&7A challenging dropper map"
+      - "&7Difficulty: &cHard"
+    schematic: "advanced_map"
+    world: "world"
+    difficulty: "HARD"
+    min_y: 0
+    max_y: 256
+    spawn_point:
+      x: 100
+      y: 150
+      z: 100
+      yaw: 0
+      pitch: 0
+    checkpoint_locations:
+      - x: 100
+        y: 100
+        z: 100
+      - x: 100
+        y: 50
+        z: 100
+    finish_location:
+      x: 100
+      y: 5
+      z: 100
+    pos1:
+      - 100
+      - 0
+      - 100
+    pos2:
+      - 116
+      - 256
+      - 116
+
+# Map Rotation Settings
+rotation:
+  enabled: true
+  interval: 3600 # 1 hour in seconds
+  random: true
+  excluded_maps: []
+
+# Map Voting Settings
+voting:
+  enabled: true
+  duration: 30
+  min_votes: 1
+  maps_per_vote: 3
+  excluded_maps: []
+
+# Map Difficulty Settings
+difficulties:
+  EASY:
+    color: "&a"
+    description: "Easy difficulty with simple drops"
+  MEDIUM:
+    color: "&e"
+    description: "Medium difficulty with some challenging drops"
+  HARD:
+    color: "&c"
+    description: "Hard difficulty with complex drops"
+  EXPERT:
+    color: "&4"
+    description: "Expert difficulty with extreme drops"
