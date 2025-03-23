@@ -1,0 +1,45 @@
+door:
+  door_timer: 5
+  allowed_materials: [WOODEN_DOOR, IRON_DOOR]
+  sound_effects: true
+dropper:
+  drop_chance: 0.25
+  fall_speed_modifier: 1.2
+  water_effect: true
+scoreboard:
+  title: "&6&lLucky Dropper"
+  lines:
+    - "&aPlayers: {player_count}"
+    - "&bMap: {map_name}"
+    - "&eVotes: {vote_count}"
+  refresh_interval: 5
+portal:
+  coordinates:
+    - world: "world"
+      min: [100, 64, 100]
+      max: [110, 70, 110]
+  teleport_destination:
+    world: "world"
+    location: [200, 65, 200]
+  entry_message: "&dYou have entered a portal!"
+  update_scoreboard: true
+vote:
+  vote_duration: 30
+  ui:
+    title: "&aVote &6Your Map"
+    item_icon: "PAPER"
+    description_format: "&eMap: {map_name} - Votes: {votes}"
+    open_voting_item:
+      name: "&aOpen Voting"
+      material: "PAPER"
+    leave_item:
+      name: "&cLeave Arena"
+      material: "BARRIER"
+    waiting_state: true  # Indicates if the leave item should be available only in waiting state
+schema:
+  lobby_schematic: "lobby_schematic"
+  map_schematic_folder: "maps/"
+  auto_load: true
+settings:
+  difficulty: "medium"
+  area_detection: "auto"
