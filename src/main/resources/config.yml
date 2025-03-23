@@ -1,45 +1,88 @@
-door:
-  door_timer: 5
-  allowed_materials: [WOODEN_DOOR, IRON_DOOR]
-  sound_effects: true
-dropper:
-  drop_chance: 0.25
-  fall_speed_modifier: 1.2
-  water_effect: true
-scoreboard:
-  title: "&6&lLucky Dropper"
-  lines:
-    - "&aPlayers: {player_count}"
-    - "&bMap: {map_name}"
-    - "&eVotes: {vote_count}"
-  refresh_interval: 5
-portal:
-  coordinates:
-    - world: "world"
-      min: [100, 64, 100]
-      max: [110, 70, 110]
-  teleport_destination:
-    world: "world"
-    location: [200, 65, 200]
-  entry_message: "&dYou have entered a portal!"
-  update_scoreboard: true
-vote:
-  vote_duration: 30
-  ui:
-    title: "&aVote &6Your Map"
-    item_icon: "PAPER"
-    description_format: "&eMap: {map_name} - Votes: {votes}"
-    open_voting_item:
-      name: "&aOpen Voting"
-      material: "PAPER"
-    leave_item:
-      name: "&cLeave Arena"
-      material: "BARRIER"
-    waiting_state: true  # Indicates if the leave item should be available only in waiting state
-schema:
-  lobby_schematic: "lobby_schematic"
-  map_schematic_folder: "maps/"
-  auto_load: true
+# LuckyDropper Configuration
+
+# Game Settings
 settings:
-  difficulty: "medium"
-  area_detection: "auto"
+  min_players: 2
+  max_players: 8
+  start_countdown: 30
+  game_duration: 300 # 5 minutes
+  allow_spectators: true
+  auto_start: true
+  auto_join: true
+
+# Schema Settings
+schema:
+  lobby_schematic: "lobby"
+  map_schematic_folder: "maps"
+  auto_load: true
+  spacing: 16 # Minimum space between schematics
+  check_area: true # Check if area is occupied before placing schematic
+
+# Voting Settings
+vote:
+  duration: 30 # Seconds
+  min_votes: 1
+  items:
+    voting:
+      material: "PAPER"
+      name: "&aVote for Map"
+      lore:
+        - "&7Click to vote for a map!"
+        - "&7Current votes: &e{votes}"
+    leave:
+      material: "BARRIER"
+      name: "&cLeave Game"
+      lore:
+        - "&7Click to leave the game"
+    map_item:
+      material: "MAP"
+      name_format: "&b{map_name}"
+      lore:
+        - "&7Votes: &e{votes}"
+        - "&7Click to vote!"
+
+# Reward Settings
+rewards:
+  first:
+    commands:
+      - "give %player% diamond 1"
+      - "eco give %player% 100"
+  second:
+    commands:
+      - "give %player% gold_ingot 1"
+      - "eco give %player% 50"
+  third:
+    commands:
+      - "give %player% iron_ingot 1"
+      - "eco give %player% 25"
+  participation:
+    commands:
+      - "eco give %player% 10"
+
+# Message Settings
+messages:
+  prefix: "&8[&bLuckyDropper&8] "
+  join: "&a%player% has joined the game! (%current%/%max%)"
+  leave: "&c%player% has left the game! (%current%/%max%)"
+  start: "&aGame has started!"
+  end: "&cGame has ended!"
+  win: "&a%player% has won the game!"
+  checkpoint: "&aCheckpoint set!"
+  death: "&c%player% died! Deaths: %deaths%"
+
+# Database Settings (for future use)
+database:
+  enabled: false
+  type: "sqlite" # sqlite or mysql
+  mysql:
+    host: "localhost"
+    port: 3306
+    database: "luckydropper"
+    username: "root"
+    password: "password"
+
+# Debug Settings
+debug:
+  enabled: false
+  log_level: "INFO" # INFO, WARNING, ERROR
+  show_debug_messages: false
