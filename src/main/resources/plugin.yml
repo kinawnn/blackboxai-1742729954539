@@ -1,0 +1,10 @@
+name: LuckyDropper
+main: com.luckyplugins.minigames.LuckyDropperPlugin
+version: 1.0
+author: Kinawn
+description: A fully configurable dropper minigame plugin – featuring doors, droppers, scoreboards, portals, map management, and voting – rebranded as Lucky by Kinawn.
+commands:
+  luckydropper:
+    description: Main command for both admin and player operations.
+    usage: /luckydropper <join|joinid|vote|setting|reload> [args]
+    permission: luckydropper.admin
