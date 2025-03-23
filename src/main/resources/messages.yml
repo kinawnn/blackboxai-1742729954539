@@ -1,0 +1,34 @@
+general:
+  no_permission: "&cYou don't have permission to do that!"
+  usage: "&eUsage: /luckydropper <command> [args]"
+join:
+  success: "&aYou have joined map {map_name}!"
+  error: "&cUnable to join the map."
+vote:
+  start: "&bVoting has started! Use /ld vote to cast your vote!"
+  result: "&aMap {map_name} wins the vote!"
+setting:
+  updated: "&2Settings have been updated successfully!"
+  invalid: "&cInvalid setting parameters!"
+door:
+  triggered: "&eDoor activated!"
+dropper:
+  activated: "&dDropper triggered!"
+scoreboard:
+  updated: "&aScoreboard updated!"
+portal:
+  entered: "&5You have entered a portal!"
+  teleported: "&dTeleporting..."
+command:
+  help_admin:
+    - "&c/luckydropper join - Join the currently active map (for players)"
+    - "&c/luckydropper joinid <mapName> - Join a specified map"
+    - "&c/luckydropper vote - Open voting UI for map selection"
+    - "&c/luckydropper setting <option> <value> - Change admin settings"
+    - "&c/luckydropper reload - Reload plugin configuration"
+  help_player:
+    - "&a/luckydropper join - Join the currently active map"
+    - "&a/luckydropper joinid <mapName> - Join a specified map"
+    - "&a/luckydropper vote - Vote for your desired map"
+error:
+  generic: "&cAn error occurred. Please check the console for details."
