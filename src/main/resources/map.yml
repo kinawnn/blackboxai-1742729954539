@@ -1,0 +1,11 @@
+maps:
+  LuckyArena1:
+    world: "world"
+    pos1: [50, 64, 50]
+    pos2: [150, 80, 150]
+    enabled: true
+  LuckyArena2:
+    world: "world_nether"
+    pos1: [30, 50, 30]
+    pos2: [130, 70, 130]
+    enabled: true
