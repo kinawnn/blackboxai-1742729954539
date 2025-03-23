@@ -1,0 +1,34 @@
+# Scoreboard Configuration
+title: "&6&lLucky Dropper"
+
+# Available placeholders:
+# {player_count} - Number of players in the game
+# {map_name} - Current map name
+# {votes} - Number of votes for current map
+# {time_left} - Time remaining in current game
+# {player_position} - Player's current position
+# {total_players} - Total players in the game
+# {arena_name} - Current arena name
+# {player_name} - Player's name
+# {wins} - Player's total wins
+# {games_played} - Player's total games played
+
+# Lines will be displayed in order from top to bottom
+lines:
+  - "&7&m------------------"
+  - "&fPlayer: &a{player_name}"
+  - "&fArena: &b{arena_name}"
+  - "&fMap: &e{map_name}"
+  - "&fPosition: &c{player_position}/{total_players}"
+  - "&fTime Left: &6{time_left}"
+  - "&fPlayers: &a{player_count}"
+  - "&7&m------------------"
+
+# Update interval in ticks (20 ticks = 1 second)
+update_interval: 20
+
+# Scoreboard visibility settings
+settings:
+  show_in_lobby: true
+  show_in_game: true
+  show_after_game: true
